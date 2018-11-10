@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+m_EditorVersion: 2018.2.13f1
+=======
+<<<<<<< HEAD
 m_EditorVersion: 2018.2.14f1
 =======
 m_EditorVersion: 2018.2.8f1
 >>>>>>> 62ec8da1e85f7c0945e7d11c634545888908b36f
+>>>>>>> origin/master
