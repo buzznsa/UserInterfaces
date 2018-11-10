@@ -9,7 +9,7 @@ public class LoadGame : MonoBehaviour
 
     public void GotoMainScene()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("7.1CharacterControllers");
     }
     public void GotoMainMenu()
     {
