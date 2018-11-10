@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 namespace Anonym.Isometric
 {
+    
     [RequireComponent(typeof(NavMeshAgent))]
     public class IsometricNavMeshAgent : IsometricMovement
     {
