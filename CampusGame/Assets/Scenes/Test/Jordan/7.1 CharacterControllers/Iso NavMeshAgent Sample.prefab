@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4877402009894466}
   - component: {fileID: 195874930446662354}
   - component: {fileID: 114129982281943816}
+  - component: {fileID: 136726798519567442}
   m_Layer: 0
   m_Name: Iso NavMeshAgent Sample
   m_TagString: Player
@@ -150,7 +151,7 @@ MonoBehaviour:
   fJumpingHeightMultiplier: 1.5
   fJumpingDurationMultiplier: 0.5
   bRotateToDirection: 0
-  characterCollider: {fileID: 0}
+  characterCollider: {fileID: 136726798519567442}
   animator: {fileID: 95960037344957796}
   bUseParameterForAnimator: 1
   bUseXAxisFlipAnimation: 0
@@ -180,6 +181,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   localRotation: {x: 0, y: 0, z: 0}
   localScale: {x: 1, y: 1, z: 1}
+--- !u!136 &136726798519567442
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1479310409889134}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &195874930446662354
 NavMeshAgent:
   m_ObjectHideFlags: 1
