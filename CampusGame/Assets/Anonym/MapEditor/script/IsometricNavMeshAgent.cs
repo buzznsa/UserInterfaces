@@ -349,6 +349,7 @@ namespace Anonym.Isometric
         }
         override public void Start()
         {
+            Camera.main.GetComponent<CompleteCameraController>().target = transform; //Fix camera on "me"
             Init();
         }
 

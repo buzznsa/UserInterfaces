@@ -9,6 +9,7 @@ namespace Anonym.Isometric
     [RequireComponent(typeof(CharacterController))]
     public class IsometricCharacterController : IsometricMovement
     {
+        
         #region Character
         [Header("CharacterController")]
         [SerializeField]
@@ -82,6 +83,7 @@ namespace Anonym.Isometric
         #region GameObject
         override public void Start()
         {
+            
 
             if (CC == null)
                 CC = gameObject.GetComponent<CharacterController>();
