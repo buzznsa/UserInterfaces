@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class LoginScreen : MonoBehaviour {
@@ -41,7 +42,7 @@ public class LoginScreen : MonoBehaviour {
            //if(usernameEnter == username && passwordEnter == password)
            if(usernameEnter.Length != 0 && passwordEnter.Length != 0)
            {
-
+                SceneManager.LoadScene("CampusVer3P");
                 Debug.Log("Welcome Roadrunner!");
            }
             else
