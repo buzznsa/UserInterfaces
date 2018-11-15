@@ -13,10 +13,7 @@ public class CompleteCameraController : MonoBehaviour
     void Start()
     {
         //offset = transform.position - target.position;
-        Debug.Log(target.position.x);
-        Debug.Log(target.position.y);
-        Debug.Log(offset.x);
-        Debug.Log(offset.y);
+     
         y = 12.17f;
         x = 15.9f;
         z = 14.8f;
@@ -25,13 +22,9 @@ public class CompleteCameraController : MonoBehaviour
     void FixedUpdate()
     {
        
-        Debug.Log(target.position.x);
-        Debug.Log(target.position.y);
-        Debug.Log(offset.x);
-        Debug.Log(offset.y);
+       
         transform.position = new Vector3(target.position.x + offset.x, offset.y, target.position.z + offset.z);
-        Debug.Log(target.position.x + offset.x);
-        Debug.Log(target.position.y + offset.y);
+   
     }
 
 }
