@@ -6,6 +6,8 @@ namespace Anonym.Isometric
 {
     public class KeyInputAssist : Util.Singleton<KeyInputAssist>
     {
+        
+
         [SerializeField]
         IsometricMovement target;
 
@@ -25,8 +27,17 @@ namespace Anonym.Isometric
         [SerializeField, Header("Only available with NavMeshAgent.")]
         bool bUseClickToPathfinding = true;
 
+        public Vector3 MDBuilding;
+
+        public void GOTOMD()
+        {
+            
+           AddAnchor(MDBuilding);
+        }
+            
         private void Start()
         {
+            MDBuilding = new Vector3(-1, 0, -3);
             init();
         }
 
@@ -53,7 +64,7 @@ namespace Anonym.Isometric
                 SetTarget(FindObjectOfType<IsometricMovement>());
         }
 
-        void ClickToMove()
+        public void ClickToMove()
         {
             Vector3 destination;
             if (Input.GetMouseButtonDown(0) && NMAgent.ClickToMove(out destination))
@@ -160,6 +171,7 @@ namespace Anonym.Isometric
 
         public void AddAnchor(Vector3 position)
         {
+            //Debug.Log(position);
             ClearAnchor();
             if (AnchorPrefab)
                 AnchorInstance = Instantiate(AnchorPrefab, position + AnchorPrefab.transform.position, AnchorPrefab.transform.rotation);
