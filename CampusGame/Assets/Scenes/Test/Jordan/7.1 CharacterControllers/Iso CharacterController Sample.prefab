@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 143819850224907814}
   - component: {fileID: 114280284932791154}
   m_Layer: 0
-  m_Name: dude
+  m_Name: Iso CharacterController Sample
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
