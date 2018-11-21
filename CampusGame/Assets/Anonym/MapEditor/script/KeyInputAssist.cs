@@ -72,7 +72,10 @@ namespace Anonym.Isometric
             if (NMAgent != null && bUseClickToPathfinding)
                 ClickToMove();
         }
-
+        public void MoveBitch()
+        {
+            Debug.Log("Move Bitch get out the way");
+        }
         public void GOTOMD2()
         {
             
