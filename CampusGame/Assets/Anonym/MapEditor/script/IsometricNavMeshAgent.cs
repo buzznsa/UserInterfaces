@@ -13,6 +13,7 @@ namespace Anonym.Isometric
         [SerializeField]
         bool IsCustomTravalOffMesh = true;
         public static bool FindingRoom = false;
+
         bool isOnCustomOffMeshAction { get { return OffMeshAction != null; } }
         Coroutine OffMeshAction;
 

@@ -25,9 +25,15 @@ public class CollisionScript : MonoBehaviour {
         {
             Debug.Log("Collided");
             EntryPanel.SetActive(true);
-            if (Input.GetKeyUp(KeyCode.Return) || IsometricNavMeshAgent.FindingRoom)
+            Debug.Log(SceneManager.GetActiveScene().name);
+            if (Input.GetKeyUp(KeyCode.Return))
             {
                SceneManager.LoadScene(loadLevel);
+            }
+            else if(IsometricNavMeshAgent.FindingRoom)
+            {
+
+                SceneManager.LoadScene(loadLevel);
             }
         }
     }

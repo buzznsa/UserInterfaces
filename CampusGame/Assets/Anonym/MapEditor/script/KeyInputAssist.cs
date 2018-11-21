@@ -72,10 +72,7 @@ namespace Anonym.Isometric
             if (NMAgent != null && bUseClickToPathfinding)
                 ClickToMove();
         }
-        public void MoveBitch()
-        {
-            Debug.Log("Move Bitch get out the way");
-        }
+
         public void GOTOMD2()
         {
             
@@ -83,6 +80,7 @@ namespace Anonym.Isometric
             Debug.Log("GOTOMD2");
             NMAgent.GOTOMD(out vect);
             AddAnchor(vect);
+
         }
 
         bool keyMacro(InGameDirection direction, bool bShift,
