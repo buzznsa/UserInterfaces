@@ -56,7 +56,7 @@ public class LoginScreen : MonoBehaviour {
             loginScreen.SetActive(false);
 
             GameObject canvas = GameObject.Find("Canvas");
-            GameObject MainMenu = canvas.transform.FindChild("StartPanel").gameObject;
+            GameObject MainMenu = canvas.transform.Find("StartPanel").gameObject;
             MainMenu.SetActive(true);
 
             //MainMenu.SetActive(true);
