@@ -58,7 +58,7 @@ namespace Anonym.Isometric
         public void ClickToMove()
         {
             Vector3 destination;
-            if (Input.GetMouseButtonDown(0) && NMAgent.ClickToMove(out destination))
+            if (Input.GetMouseButtonDown(1) && NMAgent.ClickToMove(out destination))
                 AddAnchor(destination);
         }
 

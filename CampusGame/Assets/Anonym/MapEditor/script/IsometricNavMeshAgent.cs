@@ -201,6 +201,7 @@ namespace Anonym.Isometric
                 RaycastHit[] hits = Physics.RaycastAll(ray, 1000);
 
                 float fMinDistance = float.MaxValue;
+                Debug.Log(destination + "in it!");
                 NavMeshHit minHit = new NavMeshHit();
 
                 var enumerator = hits.GetEnumerator();
@@ -222,12 +223,10 @@ namespace Anonym.Isometric
                 {
                     Vector3 vTmp = minHit.position;
                     Debug.Log(destination + "minHit");
-                    if (SetDestination(ref vTmp))
-                    {
-                        destination = vTmp;
-                        Debug.Log(destination + "inside");
+                    destination = new Vector3(7, 0, -3);
+                        Debug.Log(destination + "inside2");
                         return true;
-                    }
+                    
                 }
             }
             return false;
