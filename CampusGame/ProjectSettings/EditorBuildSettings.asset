@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test/CampusVer3P.unity
     guid: dce5da4263758a44e9fb380b1c944afb
+  - enabled: 1
+    path: Assets/Scenes/Test/Emiliano/EngineeringBuildingLoad.unity
+    guid: 430cfcbbed59b5a44abe17cab1504303
   m_configObjects: {}

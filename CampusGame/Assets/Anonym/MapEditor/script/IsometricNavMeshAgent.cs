@@ -33,6 +33,7 @@ namespace Anonym.Isometric
 
         [SerializeField]
         public NavMeshAgent NMAgent;
+        public Vector3 MDbuilding;
 
         float _baseOffset;
 
@@ -148,7 +149,10 @@ namespace Anonym.Isometric
 
         public bool ClickToMove(out Vector3 destination)
         {
+            Debug.Log("Moved");
+            
             destination = Vector3.zero;
+            
             if (NMAgent.isOnNavMesh)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -178,6 +182,50 @@ namespace Anonym.Isometric
                     if (SetDestination(ref vTmp))
                     {
                         destination = vTmp;
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public bool GOTOMD(out Vector3 destination)
+        {
+            Debug.Log("Moved");
+            destination = Vector3.zero;
+          
+            Debug.Log(destination);
+            if (NMAgent.isOnNavMesh)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit[] hits = Physics.RaycastAll(ray, 1000);
+
+                float fMinDistance = float.MaxValue;
+                NavMeshHit minHit = new NavMeshHit();
+
+                var enumerator = hits.GetEnumerator();
+                while (enumerator.MoveNext())
+                {
+                    NavMeshHit nHit;
+                    RaycastHit current = (RaycastHit)enumerator.Current;
+                    if (NavMesh.SamplePosition(current.point, out nHit, 10, NavMesh.AllAreas))
+                    {
+                        if (nHit.distance < fMinDistance)
+                        {
+                            fMinDistance = nHit.distance;
+                            minHit = nHit;
+                        }
+                    }
+                }
+
+                if (fMinDistance != float.MaxValue)
+                {
+                    Vector3 vTmp = minHit.position;
+                    Debug.Log(destination + "minHit");
+                    if (SetDestination(ref vTmp))
+                    {
+                        destination = vTmp;
+                        Debug.Log(destination + "inside");
                         return true;
                     }
                 }
@@ -349,6 +397,7 @@ namespace Anonym.Isometric
         }
         override public void Start()
         {
+            MDbuilding = new Vector3(7,0,-3);
             Camera.main.GetComponent<CompleteCameraController>().target = transform; //Fix camera on "me"
             Init();
         }

@@ -26,18 +26,9 @@ namespace Anonym.Isometric
         IsometricNavMeshAgent NMAgent = null;
         [SerializeField, Header("Only available with NavMeshAgent.")]
         bool bUseClickToPathfinding = true;
-
-        public Vector3 MDBuilding;
-
-        public void GOTOMD()
-        {
-            
-           AddAnchor(MDBuilding);
-        }
             
         private void Start()
         {
-            MDBuilding = new Vector3(-1, 0, -3);
             init();
         }
 
@@ -80,6 +71,15 @@ namespace Anonym.Isometric
 
             if (NMAgent != null && bUseClickToPathfinding)
                 ClickToMove();
+        }
+
+        public void GOTOMD2()
+        {
+            
+            Vector3 vect;
+            Debug.Log("GOTOMD2");
+            NMAgent.GOTOMD(out vect);
+            AddAnchor(vect);
         }
 
         bool keyMacro(InGameDirection direction, bool bShift,
