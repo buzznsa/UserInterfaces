@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Anonym.Isometric;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -24,10 +25,9 @@ public class CollisionScript : MonoBehaviour {
         {
             Debug.Log("Collided");
             EntryPanel.SetActive(true);
-            if (Input.GetKeyUp(KeyCode.Return))
+            if (Input.GetKeyUp(KeyCode.Return) || IsometricNavMeshAgent.FindingRoom)
             {
-
-               // SceneManager.LoadScene(loadLevel);
+               SceneManager.LoadScene(loadLevel);
             }
         }
     }

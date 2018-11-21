@@ -12,6 +12,7 @@ namespace Anonym.Isometric
     {
         [SerializeField]
         bool IsCustomTravalOffMesh = true;
+        public static bool FindingRoom = false;
         bool isOnCustomOffMeshAction { get { return OffMeshAction != null; } }
         Coroutine OffMeshAction;
 
@@ -152,7 +153,7 @@ namespace Anonym.Isometric
             Debug.Log("Moved");
             
             destination = Vector3.zero;
-            
+            FindingRoom = false;
             if (NMAgent.isOnNavMesh)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -193,41 +194,15 @@ namespace Anonym.Isometric
         {
             Debug.Log("Moved");
             destination = Vector3.zero;
-          
+            FindingRoom = true;
             Debug.Log(destination);
             if (NMAgent.isOnNavMesh)
             {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit[] hits = Physics.RaycastAll(ray, 1000);
-
-                float fMinDistance = float.MaxValue;
-                Debug.Log(destination + "in it!");
-                NavMeshHit minHit = new NavMeshHit();
-
-                var enumerator = hits.GetEnumerator();
-                while (enumerator.MoveNext())
-                {
-                    NavMeshHit nHit;
-                    RaycastHit current = (RaycastHit)enumerator.Current;
-                    if (NavMesh.SamplePosition(current.point, out nHit, 10, NavMesh.AllAreas))
-                    {
-                        if (nHit.distance < fMinDistance)
-                        {
-                            fMinDistance = nHit.distance;
-                            minHit = nHit;
-                        }
-                    }
-                }
-
-                if (fMinDistance != float.MaxValue)
-                {
-                    Vector3 vTmp = minHit.position;
-                    Debug.Log(destination + "minHit");
-                    destination = new Vector3(7, 0, -3);
-                        Debug.Log(destination + "inside2");
-                        return true;
-                    
-                }
+                destination = new Vector3(-2, 0, -3);
+                bOnMoving = true;
+                NMAgent.isStopped = bSnapToGroundGrid;
+                NMAgent.destination = destination;
+                return true;
             }
             return false;
         }
