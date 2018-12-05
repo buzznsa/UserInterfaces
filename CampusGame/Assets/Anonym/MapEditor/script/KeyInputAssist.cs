@@ -55,6 +55,11 @@ namespace Anonym.Isometric
                 SetTarget(FindObjectOfType<IsometricMovement>());
         }
 
+        public void Slider_Speed(float newSpeed)
+        {
+            NMAgent.Slider_Speed(newSpeed);
+        }
+
         public void ClickToMove()
         {
             Vector3 destination;
@@ -75,12 +80,10 @@ namespace Anonym.Isometric
 
         public void GOTOMD2()
         {
-            
             Vector3 vect;
             Debug.Log("GOTOMD2");
             NMAgent.GOTOMD(out vect);
             AddAnchor(vect);
-
         }
 
         bool keyMacro(InGameDirection direction, bool bShift,

@@ -12,7 +12,7 @@ namespace Anonym.Isometric
     {
         [SerializeField]
         bool IsCustomTravalOffMesh = true;
-        public static bool FindingRoom = false;
+        public static bool FindingRoom = false;//Is the user finding a room?
 
         bool isOnCustomOffMeshAction { get { return OffMeshAction != null; } }
         Coroutine OffMeshAction;
@@ -207,6 +207,10 @@ namespace Anonym.Isometric
             }
             return false;
         }
+        public void Slider_Speed(float newSpeed)
+        {
+            NMAgent.speed = newSpeed;
+        }
 
         override public Bounds GetBounds()
         {
@@ -358,6 +362,7 @@ namespace Anonym.Isometric
             SetMinMoveDistance(Mathf.Min(NMAgent.stoppingDistance, fGridTolerance));
 
             NMAgent.speed = fSpeed;
+            
 
             if (NMAgent.isOnNavMesh && destination)
                 NMAgent.SetDestination(destination.transform.position);

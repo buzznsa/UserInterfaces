@@ -19,26 +19,26 @@ public class CollisionScript : MonoBehaviour {
 		
 	}
 
-    void OnTriggerStay(Collider col)
+    void OnTriggerStay(Collider col)//If player hits trigger box, open the panel to enter building
     {
         if (col.gameObject.CompareTag("Player"))
         {
             Debug.Log("Collided");
             EntryPanel.SetActive(true);
             Debug.Log(SceneManager.GetActiveScene().name);
-            if (Input.GetKeyUp(KeyCode.Return))
+            if (Input.GetKeyUp(KeyCode.Return))//If the user presses ENTER, load the building
             {
                SceneManager.LoadScene(loadLevel);
             }
-            else if(IsometricNavMeshAgent.FindingRoom)
+            else if(IsometricNavMeshAgent.FindingRoom)//The user character is already looking for a room, 
+                                                      //load the scene automatically
             {
-
                 SceneManager.LoadScene(loadLevel);
             }
         }
     }
 
-    void OnTriggerExit()
+    void OnTriggerExit()//If user exits trigger box, deactivate the panel
     {
         EntryPanel.SetActive(false);
     }
