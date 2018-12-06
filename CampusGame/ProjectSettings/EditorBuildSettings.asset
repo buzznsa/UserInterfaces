@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test/Emiliano/EngineeringBuildingLoad.unity
     guid: 430cfcbbed59b5a44abe17cab1504303
+  - enabled: 1
+    path: Assets/Scenes/Test/Emiliano/EB2.unity
+    guid: a0017e53e70ce4c088f78a0546c5b8f0
+  - enabled: 1
+    path: Assets/Scenes/Test/Emiliano/EB1st.unity
+    guid: 298a342740d084dcdb31c51c96198146
+  - enabled: 1
+    path: Assets/Scenes/Test/Emiliano/EB3rd.unity
+    guid: fa5cdada80b034ea6b9ecf64b12f529e
   m_configObjects: {}
